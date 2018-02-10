@@ -61,20 +61,17 @@ objectFriend.catalog = {
         tuba: {
             traits: ['traitor', 'desperate', 'partier']
         },
-        rainbowTrout: {
-            traits: ['persuader', 'strong', 'selfish']
+        pantsuit: {
+            traits: ['advisor','kicky','selfish']
         },
-        stadium: {
-            traits: ['medical', 'speedy', 'entertainer']
+        rock: {
+            traits: ['fixer', 'kind', 'medical']
         },
         glassOfMilk: {
             traits: ['lazy', 'maker', 'meanie' ]
         },
-        aceOfClubs: {
-            traits: ['maker','waster','persuader']
-        },
-        pantsuit: {
-            traits: ['advisor','kicky','selfish']
+        stadium: {
+            traits: ['medical', 'speedy', 'entertainer']
         },
         foamFinger: {
             traits: ['heroic','medical','entertainer']
@@ -82,14 +79,33 @@ objectFriend.catalog = {
         floppyDisk:{
             traits: ['archivist', 'strong', 'cook']
         },
+        rainbowTrout: {
+            traits: ['persuader', 'strong', 'selfish']
+        },
+        ballOfYarn: {
+            traits: ['lazy', 'maker', 'desperate']
+        },
+        soccerTeam: {
+            traits: ['kicker','waster','persuader']
+        },
+        butter: {
+            traits: ['traitor', 'partier', 'maker']
+        },
+        volleyball: {
+            traits: ['patient0', 'advisor', 'archivist']
+        },
+        car: {
+            traits: ['cook', 'persuader', 'meanie']
+        },
         salad: {
             traits: ['meanie', 'fixer', 'heroic']
             // YOU DON'T MAKE FRIENDS WITH SALAD
         }
        
-
-}
-
+        
+    }
+    
+objectFriend.selectedTraits = [];
     // write a function (1) that pulls three random objects from MAIN array
     // function getRandomFriend(array){
     //     const randoIndex = Math.floor(Math.random()* array.length)
@@ -103,13 +119,13 @@ objectFriend.catalog = {
 
     //QUESTION: can the "name" feed the image that appears on the HTML while the "traits" are stored for future use in a function?
 
-    //write a function (2) that, on-click of chosen object, stores the three corresponding traits in a new SURVIVAL array (that can take additional values later)
+    //write a function (2) that on-click of chosen object, stores the three corresponding traits in a new SURVIVAL array (that can take additional values later)
    
     objectFriend.userChoice = function(){
         let $radios = $('input[type=radio]');
-        console.log($radios);
+        // console.log($radios);
         $radios.on('click', function(){
-            console.log(this);
+            // console.log(this);
             let target = this.value;
             console.log(target);
             objectFriend.getTraits(target);
@@ -118,11 +134,19 @@ objectFriend.catalog = {
 
     objectFriend.getTraits = function(target){
         // console.log('hello')
-        let traits = objectFriend.catalog[target].traits;
-        console.log(traits);
-
+        let traitSet = objectFriend.catalog[target].traits;
+        console.log(traitSet);
+        objectFriend.aggregateTraits(traitSet);
     }
 
+    objectFriend.aggregateTraits = function(traitSet){
+        console.log("hey now");
+        console.log(traitSet);
+        objectFriend.selectedTraits.push(traitSet);
+        console.log(objectFriend.selectedTraits)
+    }
+
+    // take traits and get corresponding key pair values from the traits object
     //stretch goal: display a short description of the chosen object's 
     
     //write a function (3) that removes the three objects from the last turn from the MAIN array
@@ -145,6 +169,7 @@ objectFriend.catalog = {
         // console.log('it works!')
         
         objectFriend.userChoice();
+        // objectFriend.aggregateTraits();
     });
 
 
