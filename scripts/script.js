@@ -15,7 +15,9 @@
 // PSEUDOCODE STARTS HERE   
 //creating an empty object where the game's functionality lives
 
-const objectFriend = {};  
+const objectFriend = {}; 
+
+objectFriend.score = 0;
 
 // key value pairings of traits, values in DAYS
 objectFriend.traits = {
@@ -41,6 +43,13 @@ objectFriend.traits = {
     patient0: -250,
     lazy: -30
 }
+
+// objectFriend.traits = [
+//     {heroic: 80}
+// ]
+
+//objectFriend.traits.trait
+
 //create friend inventory that is an object (array?) that holds the friend data
 
 objectFriend.catalog = {
@@ -61,7 +70,7 @@ objectFriend.catalog = {
         tuba: {
             traits: ['traitor', 'desperate', 'partier']
         },
-        pantsuit: {
+        pants: {
             traits: ['advisor','kicky','selfish']
         },
         rock: {
@@ -105,7 +114,7 @@ objectFriend.catalog = {
         
     }
     
-objectFriend.selectedTraits = [];
+// objectFriend.selectedTraits = [];
     // write a function (1) that pulls three random objects from MAIN array
     // function getRandomFriend(array){
     //     const randoIndex = Math.floor(Math.random()* array.length)
@@ -121,6 +130,8 @@ objectFriend.selectedTraits = [];
 
     //write a function (2) that on-click of chosen object, stores the three corresponding traits in a new SURVIVAL array (that can take additional values later)
    
+
+    
     objectFriend.userChoice = function(){
         let $radios = $('input[type=radio]');
         // console.log($radios);
@@ -128,26 +139,78 @@ objectFriend.selectedTraits = [];
             // console.log(this);
             let target = this.value;
             console.log(target);
+            // objectFriend.getTraits(target);
+            
+        $('.choiceMade').on('submit', function(e){
+            e.preventDefault();
+            // console.log('submit works!')
+    //         let target = this.value;
+    //         console.log(target);
             objectFriend.getTraits(target);
-        });
+            });
+        }); 
     }
+
 
     objectFriend.getTraits = function(target){
         // console.log('hello')
         let traitSet = objectFriend.catalog[target].traits;
         console.log(traitSet);
-        objectFriend.aggregateTraits(traitSet);
+        console.log(`You have chosen ${target}.`)
+        for (let trait in traitSet) {
+            // console.log(traitSet[trait]);
+            let value = objectFriend.traits[traitSet[trait]];
+            objectFriend.score += value;
+            console.log(`${target} is a ${traitSet[trait]} which gives you ${value} days.`)
+            
+            // use jquery to .text the console log template literal to the div
+        }
+        console.log(`Your score is now ${objectFriend.score} days.`)
+        // objectFriend.aggregateTraits(traitSet);
     }
 
-    objectFriend.aggregateTraits = function(traitSet){
-        console.log("hey now");
-        console.log(traitSet);
-        objectFriend.selectedTraits.push(traitSet);
-        console.log(objectFriend.selectedTraits)
+    objectFriend.submitChoice = function (){
+
     }
+
+    $(function () {
+        $('a').smoothScroll({
+            // offset: 100
+        });
+    });
+    // objectFriend.aggregateTraits = function(traitSet){
+    //     // console.log("hey now");
+    //     // console.log(traitSet);
+    //     objectFriend.selectedTraits.push(traitSet);
+    //     // console.log(objectFriend.selectedTraits)
+    //     const concatTraits = objectFriend.selectedTraits.reduce(function(acc, curr){
+    //         return acc.concat(curr);
+    //     })
+    
+    //     console.log(concatTraits);
+        
+    // }
+
+    // for(let key in objectFriend.traits) {
+    //     console.log(objectFriend.traits[key])
+    // }
+    
+    // objectFriend.valueArray = function(){
+    //     for(let i =0; i<concatTraits.length; i++) {
+    //         // console.log(concatTraits[i]);
+    //         // console.log('for in loop')
+
+    //         if (i === objectFriend.traits[key]) {
+    //             console.log(objectFriend.traits[key])
+                
+    //         }
+    //     }
+    // }
 
     // take traits and get corresponding key pair values from the traits object
     //stretch goal: display a short description of the chosen object's 
+
+    // .map function 
     
     //write a function (3) that removes the three objects from the last turn from the MAIN array
     //Question - can this function live inside function2?

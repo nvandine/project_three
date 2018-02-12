@@ -9,74 +9,156 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <header>
-        <div class="wrapper">
+    <div class="container">
+    <header class="wrapper">
             <div class="headerText">
                 <h1>Welcome to Name of Game/Quiz</h1>
                 <h3>The Game/Quiz of Post-Apocalyptical Friends</h3>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A nemo, nulla nobis vero fuga illum, excepturi veniam itaque voluptatibus dicta repellat esse optio dignissimos, commodi tenetur nesciunt placeat. Obcaecati vitae recusandae animi voluptatum cupiditate adipisci amet ratione corporis nisi, maiores, mollitia voluptatibus sint! Iusto, ad.</p>
             </div>
-        </div>
+            <div class="start">
+                <a href="#stage1">let's go</a>
+            </div>
     </header>
-    <main>
-        <form action="">
-            <!-- FIRST CHOICE -->
-            <section class="stage1 wrapper">
-               <label for="spoon"><img src="assets/spoon.png" alt="spoon"></label>
-               <input type="radio" name="stage1" value="spoon" id="spoon">
+    <main class="overlay">
+        <!-- FIRST CHOICE -->
+        <section id="stage1" class="stage1 wrapper">
+            <h2>You're flying solo, it's time to find a new buddy. Will your first friend be:</h2>
+            <form class="radio" action="">
+                <label for="spoon">
+                <input type="radio" name="stage1" value="spoon" id="spoon">
+                <img src="assets/spoon.png" alt="spoon">
+                <h3>a spoon</h3>
+                </label>
+                
+                <label for="cathodeRayTv">
+                <input type="radio" name="stage1" value="cathodeRayTv" id="cathodeRayTv">
+                <img src="assets/cathodeRayTV.png" alt="cathode ray television">
+                <h3>this cathode ray TV</h3>
+                </label>
+                
+                <label for="partyTurtle">
+                <input type="radio" name="stage1" value="partyTurtle" id="partyTurtle">
+                <img src="assets/partyTurtle.png" alt="turtle wearing a party hat">
+                <h3>or this party turtle?</h3>
+                </label>
+            </form>
+            <form class="choiceMade" action="">
+                <input type="submit" value="validate my life choices">
+            </form>
+            <div class="result">
+                <p></p>
+                <a href="#stage3">I want to take this friendship to the next level</a>
+                
+            </div>
+            <div class="result">
+                <a href="#stage3">I want to take this to the next level</a>
+            
+            </div>
+            <div class="result">
+                <a href="#stage3">I want to take this to the next level</a>
+            
+            </div>
+        </section>
+        <!-- SECOND CHOICE -->
+        <section id="stage2" class="stage2 wrapper">
+            <form action="">
+                <label for="stairCar">
+                <h3>this stair car,</h3>
+                <input type="radio" name="stage2" value="stairCar" id="stairCar">
+                <img src="assets/stairCar.png" alt="stair car">
+                </label>
+                
+                <label for="tuba">
+                <h3>a tuba-ma-bob,</h3>
+                <input type="radio" name="stage2" value="tuba" id="tuba">
+                <img src="assets/tuba.png" alt="tuba">
+                </label>
+                
+                <label for="pants">
+                <h3>or these pants?</h3>
+                <input type="radio" name="stage2" value="pants" id="pants">
+                <img src="assets/pants.png" alt="pants">
+                </label>
+            </form>
+        </section>
+        <!-- THIRD CHOICE -->
 
-               <label for="cathodeRayTv"><img src="assets/cathodeRayTV.png" alt="cathode ray television"></label>
-               <input type="radio" name="stage1" value="cathodeRayTv" id="cathodeRayTv">
-               
-               <label for="partyTurtle"><img src="assets/partyTurtle.png" alt="turtle wearing a party hat"></label>
-               <input type="radio" name="stage1" value="partyTurtle" id="partyTurtle">
-            </section>
-            <!-- SECOND CHOICE -->
-            <section class="stage2 wrapper">
-               <label for=""><img src="assets/stairCar.png" alt="stair car"></label>
-               <input type="radio" name="stage2" value="stairCar" id="stairCar">
-               <label for=""><img src="assets/tuba.png" alt="tuba"></label>
-               <input type="radio" name="stage2" value="tuba" id="tuba">
-               <label for=""><img src="assets/pantsuit.png" alt=""></label>
-               <input type="radio" name="stage2" value="pantsuit" id="pantsuit">
-            </section>
-            <!-- THIRD CHOICE -->
-            <section class="stage3 wrapper">
-               <label for=""><img src="assets/rock.png" alt="rock"></label>
-               <input type="radio" name="stage3" value="rock" id="rock">
-               <label for=""><img src="assets/glassOfMilk.png" alt="glass of milk"></label>
-               <input type="radio" name="stage3" value="glassOfMilk" id="glassOfMilk">
-               <label for=""><img src="assets/stadium.png" alt="progressive field, cleveland"></label>
-               <input type="radio" name="stage3" value="stadium" id="stadium">
-            </section>
-            <!-- FOURTH CHOICE -->
-            <section class="stage4 wrapper">
-               <label for=""><img src="assets/foamFinger.png" alt="foam finger"></label>
-               <input type="radio" name="stage4" value="foamFinger" id="foamFinger">
-               <label for=""><img src="assets/floppyDisk.png" alt=""></label>
-               <input type="radio" name="stage4" value="floppyDisk" id="floppyDisk">
-               <label for=""><img src="assets/rainbowTrout.png" alt="rainbow trout"></label>
-               <input type="radio" name="stage4" value="rainbowTrout" id="rainbowTrout">
-            </section>
-            <!-- FIFTH CHOICE -->
-            <section class="stage5 wrapper">
-               <label for=""><img src="assets/ballOfYarn.png" alt="ball of yarn"></label>
-               <input type="radio" name="stage5" value="ballOfYarn" id="ballOfYarn">
-               <label for=""><img src="assets/soccerTeam.png" alt="soccer team"></label>
-               <input type="radio" name="stage5" value="soccerTeam" id="soccerTeam">
-               <label for=""><img src="assets/butter.png" alt="butter"></label>
-               <input type="radio" name="stage5" value="butter" id="butter">
-            </section>
-            <!-- SIXTH CHOICE -->
-            <section class="stage6 wrapper">
-               <label for=""><img src="assets/volleyball.png" alt="volleyball with handprint on it"></label>
-               <input type="radio" name="stage6" value="volleyball" id="volleyball">
-               <label for=""><img src="assets/car.png" alt="broken down car"></label>
-               <input type="radio" name="stage6" value="car" id="car">
-               <label for=""><img src="assets/salad.png" alt="salad"></label>
-               <input type="radio" name="stage6" value="salad" id="salad">
-            </section>
-        </form>
+        <section id="stage3" class="stage3 wrapper">
+            <form action="">
+                <label for="rock">
+                <input type="radio" name="stage3" value="rock" id="rock">
+                <img src="assets/rock.png" alt="rock">
+                </label>
+
+                <label for="glassOfMilk">
+                <input type="radio" name="stage3" value="glassOfMilk" id="glassOfMilk">
+                <img src="assets/glassOfMilk.png" alt="glass of milk">
+                </label>
+
+                <label for="stadium">
+                <input type="radio" name="stage3" value="stadium" id="stadium">
+                <img src="assets/stadium.png" alt="progressive field, cleveland">
+                </label>
+            </form>
+        </section>
+        <!-- FOURTH CHOICE -->
+        <section class="stage4 wrapper">
+            <form action="">
+                <label for="foamFinger">
+                <input type="radio" name="stage4" value="foamFinger" id="foamFinger">
+                <img src="assets/foamFinger.png" alt="foam finger">
+                </label>
+
+                <label for="floppyDisk">
+                <input type="radio" name="stage4" value="floppyDisk" id="floppyDisk">
+                <img src="assets/floppyDisk.png" alt="">
+                </label>
+
+                <label for="rainbowTrout">
+                <input type="radio" name="stage4" value="rainbowTrout" id="rainbowTrout">
+                <img src="assets/rainbowTrout.png" alt="rainbow trout">
+                </label>
+            </form>
+        </section>
+        <!-- FIFTH CHOICE -->
+        <section class="stage5 wrapper">
+            <form action="">
+                <label for="ballOfYarn">
+                <input type="radio" name="stage5" value="ballOfYarn" id="ballOfYarn">
+                <img src="assets/ballOfYarn.png" alt="ball of yarn">
+                </label>
+
+                <label for="soccerTeam">
+                <input type="radio" name="stage5" value="soccerTeam" id="soccerTeam">
+                <img src="assets/soccerTeam.png" alt="soccer team">
+                </label>
+
+                <label for="butter">
+                <input type="radio" name="stage5" value="butter" id="butter">
+                <img src="assets/butter.png" alt="butter">
+                </label>
+            </form>
+        </section>
+        <!-- SIXTH CHOICE -->
+        <section class="stage6 wrapper">
+            <form action="">
+                <label for="volleyball">
+                <input type="radio" name="stage6" value="volleyball" id="volleyball">
+                <img src="assets/volleyball.png" alt="volleyball with handprint on it">
+                </label>    
+
+                <label for="car">
+                <input type="radio" name="stage6" value="car" id="car">
+                <img src="assets/car.png" alt="broken down car">
+                </label>
+
+                <label for="salad">
+                <input type="radio" name="stage6" value="salad" id="salad">
+                <img src="assets/salad.png" alt="salad">
+                </label>
+            </form>
+        </section>
     </main>
     <footer>
         <div class="wrapper">
@@ -86,7 +168,9 @@
             </div>
         </div>
     </footer>
+    </div>
     <script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-smooth-scroll/2.1.2/jquery.smooth-scroll.min.js"></script>
     <script src='scripts/script.js'></script>
 </body>
 </html>
