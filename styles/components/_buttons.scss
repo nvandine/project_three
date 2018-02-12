@@ -1,0 +1,29 @@
+.start {
+    background-color: white;
+    height: 20px;
+    width: 100px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 8px 8px grey;
+}
+
+.result .next {
+    background-color: white;
+    height: 20px;
+    width: 50px;
+    text-align: center;
+    margin: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 3px 3px rgb(119, 118, 118);
+    
+}
+
+.result .last {
+    width: 250px;
+}
+
+input[type="submit"] {
+    box-shadow: 0 0 3px 3px rgb(119, 118, 118);
+    border-radius: 5px;
+}

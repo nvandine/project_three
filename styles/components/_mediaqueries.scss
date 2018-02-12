@@ -1,0 +1,30 @@
+/* MEDIA QUERIES */
+
+/* Portrait tablet and small desktops */
+
+@media (max-width: 940px) {
+    h1 {
+        font-size: 3rem;
+    }
+
+    // section .stage h2 {
+    //     padding: 20px 10% 20px;
+    //     font-size: 1.5rem;
+    // }
+
+    // section {
+    //     min-height: 100vh;
+    // }
+    // // h2 {
+    // //     font-size: 2rem;
+    // // }
+}
+/* Landscape phone to portrait tablet */
+
+@media (max-width: 767px) {
+   
+}
+/* Portrait phones and down */
+
+@media (max-width: 480px) {
+}

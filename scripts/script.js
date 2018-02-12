@@ -1,51 +1,36 @@
-// ACTIONS
-// User sees intro "page" explaining what this adventure will entail
-
-// first page appears with three objects to choose from
-
-// user clicks on the object of choice
-
-// fixed aside's Population Survival Criteria populates
-
-//repeat five more times
-
-// Conclusion page (dream: fixed aside page floats over to be featured); the number of boxes checked determines the number of days your community survives, with explanation of why.
-   
-
-// PSEUDOCODE STARTS HERE   
-//creating an empty object where the game's functionality lives
+  
+//create an empty object where the game's functionality lives
 
 const objectFriend = {}; 
 
 objectFriend.score = 0;
-
 // key value pairings of traits, values in DAYS
 objectFriend.traits = {
-    heroic: 80,
-    medical: 200,
-    cook: 140,
-    entertainer: 50,
-    persuader: 90,
-    fixer: 250,
-    maker: 175,
-    archivist: 20,
-    speedy: 45,
-    kicky: 35,
-    strong: 110,
-    kind: 225,
-    advisor: 65,
-    desperate: -90,
-    partier: -20,
-    waster: -50,
-    meanie: -75,
-    traitor: -200,
-    selfish: -100,
-    patient0: -250,
-    lazy: -30
+    'is heroic': +80,
+    'intuitively knows first aid': +200,
+    'can cook': +140,
+    'is an all-round entertainer': +50,
+    'can find water': +175,
+    'is a fixer': +250,
+    'can sew': +90,
+    'can track scent': +60,
+    'runs really fast': +45,
+    'knows karate': +97,
+    'is hella strong': +110,
+    'is very kind': +88,
+    'gives great advice': +65,
+    'is desperate': -190,
+    'is a partier': -75,
+    'likes to waste resources': -175,
+    'is really mean': -375,
+    'is a total traitor': -200,
+    'is selfish': -100,
+    'is harbouring a deadly virus': -700,
+    'is lazy': -90
 }
 
 // objectFriend.traits = [
-//     {heroic: 80}
+//     {is heroic: 80}
 // ]
 
 //objectFriend.traits.trait
@@ -54,60 +39,78 @@ objectFriend.traits = {
 
 objectFriend.catalog = {
         spoon: {
-            traits: ['cook', 'speedy', 'kind']
+            traits: ['can cook', 'runs really fast', 'is very kind'],
             // description
-            // title
+            title: 'a spoon'
+           
         },
         cathodeRayTv: {
-            traits: ['kind', 'patient0', 'kicky']
+            traits: ['is very kind', 'is harbouring a deadly virus', 'knows karate'],
+            title: 'a cathode ray tube TV'
         },
         partyTurtle: {
-            traits: ['partier', 'fixer', 'archivist']
+            traits: ['is a partier', 'is a fixer', 'can track scent'],
+            title: 'Gerald the party turtle'
         },
         stairCar: {
-            traits: ['kind', 'waster', 'desperate']
+            traits: ['is very kind', 'likes to waste resources', 'is desperate'],
+            title: 'a stair car'
         },
         tuba: {
-            traits: ['traitor', 'desperate', 'partier']
+            traits: ['is really mean', 'is a fixer', 'is heroic'], 
+            title: 'a tuba'
         },
         pants: {
-            traits: ['advisor','kicky','selfish']
+            traits: ['gives great advice', 'knows karate','is selfish'],
+            title: 'a pair of pants'
         },
-        rock: {
-            traits: ['fixer', 'kind', 'medical']
+        thumbtack: {
+            traits: ['is a fixer', 'is very kind', 'intuitively knows first aid'],
+            title: 'a thumbtack'
         },
         glassOfMilk: {
-            traits: ['lazy', 'maker', 'meanie' ]
+            traits: ['is lazy', 'can sew', 'is really mean' ],
+            title: 'a glass of expired milk'
         },
-        stadium: {
-            traits: ['medical', 'speedy', 'entertainer']
+        Danny: {
+            traits: ['intuitively knows first aid', 'runs really fast', 'is an all-round entertainer'],
+            title: 'Danny'
         },
         foamFinger: {
-            traits: ['heroic','medical','entertainer']
+            traits: ['is heroic','intuitively knows first aid','is an all-round entertainer'],
+            title: 'a foam finger'
         },
         floppyDisk:{
-            traits: ['archivist', 'strong', 'cook']
+            traits: ['can track scent', 'is hella strong', 'can cook'],
+            title: 'a 3.5 inch floppy disk'
         },
         rainbowTrout: {
-            traits: ['persuader', 'strong', 'selfish']
+            traits: ['can find water', 'is hella strong', 'is selfish'],
+            title: 'a rainbow trout'
         },
         ballOfYarn: {
-            traits: ['lazy', 'maker', 'desperate']
+            traits: ['is lazy', 'can sew', 'is desperate'],
+            title: 'a ball of yarn'
         },
         soccerTeam: {
-            traits: ['kicker','waster','persuader']
+            traits: ['knows karate','likes to waste resources','can find water'],
+            title: 'The 1994 Brazilian Fifa World Cup champions',
         },
         butter: {
-            traits: ['traitor', 'partier', 'maker']
+            traits: ['is a total traitor', 'is a partier', 'can sew'],
+            title: 'butter'
         },
         volleyball: {
-            traits: ['patient0', 'advisor', 'archivist']
+            traits: ['is harbouring a deadly virus', 'gives great advice', 'can track scent'],
+            title: 'Wilson'
         },
         car: {
-            traits: ['cook', 'persuader', 'meanie']
+            traits: ['can cook', 'can find water', 'is really mean'],
+            title: 'a 1997 Volkswagen Passat'
         },
         salad: {
-            traits: ['meanie', 'fixer', 'heroic']
+            traits: ['is a total traitor', 'is desperate', 'is a partier'],
+            title: 'salad. You don\'t make friends with salad'
             // YOU DON'T MAKE FRIENDS WITH SALAD
         }
        
@@ -130,109 +133,91 @@ objectFriend.catalog = {
 
     //write a function (2) that on-click of chosen object, stores the three corresponding traits in a new SURVIVAL array (that can take additional values later)
    
-
+//write a function that takes the value of the of the checked radio (the "target") 
+//save the three corresponding traits associated with that target
+//
     
     objectFriend.userChoice = function(){
-        let $radios = $('input[type=radio]');
+        let radios = $('input[type=radio]');
         // console.log($radios);
-        $radios.on('click', function(){
+        radios.on('click', function(){
             // console.log(this);
             let target = this.value;
             console.log(target);
-            // objectFriend.getTraits(target);
-            
-        $('.choiceMade').on('submit', function(e){
-            e.preventDefault();
-            // console.log('submit works!')
-    //         let target = this.value;
-    //         console.log(target);
             objectFriend.getTraits(target);
-            });
+            
         }); 
     }
+   
+    $('.choiceMade').on('submit', function(e){
+        e.preventDefault();
+        // console.log('submit works!')
+        $('.result').fadeIn();
+        // $('.result a').fadeIn();
+        });
+
+        // $('.result a').on('click', function(){
+        //     $('.result').hide();
+        // })
+        $(document).mouseup(function(e){
+            let container = $('.result');
+            if (!container.is(e.goal) && container.has(e.goal).length === 0) {
+                container.fadeOut();
+            }
+            $('.result a').click(function(){
+        $('.result h3').empty();
+        $('.result ul').empty();
+        $('.result h2').empty();
+        // $('.result a').fadeOut("fast");
+    })
+        })
 
 
     objectFriend.getTraits = function(target){
         // console.log('hello')
         let traitSet = objectFriend.catalog[target].traits;
+        // let traitDescription = objectFriend.catalog[target].description;
         console.log(traitSet);
-        console.log(`You have chosen ${target}.`)
+        let title = objectFriend.catalog[target].title;
+        $('.result h3').text(`You have chosen to befriend ${title}.`);
+        // console.log(`You have chosen ${target}.`)
         for (let trait in traitSet) {
             // console.log(traitSet[trait]);
             let value = objectFriend.traits[traitSet[trait]];
-            objectFriend.score += value;
-            console.log(`${target} is a ${traitSet[trait]} which gives you ${value} days.`)
             
-            // use jquery to .text the console log template literal to the div
+            objectFriend.score += value;
+            // $('.result p').append(`${target} is a ${traitSet[trait]} (${value} days.)  `);
+            $('.result ul').append(`<li>${title} ${traitSet[trait]} (${value} days) </li>`  );
+
+    
+            console.log(`Your new friend is a ${traitSet[trait]} which gives you ${value} days`)
+     
         }
-        console.log(`Your score is now ${objectFriend.score} days.`)
-        // objectFriend.aggregateTraits(traitSet);
+
+        $('.result h2').text(`Your community will last a total of ${objectFriend.score} days.`);
+        $('.finalResult').text(`${objectFriend.score}`);
+        console.log(`Your community just earned ${objectFriend.score} days.`);
+       
     }
 
-    objectFriend.submitChoice = function (){
-
-    }
 
     $(function () {
         $('a').smoothScroll({
             // offset: 100
+            speed: 800
         });
     });
-    // objectFriend.aggregateTraits = function(traitSet){
-    //     // console.log("hey now");
-    //     // console.log(traitSet);
-    //     objectFriend.selectedTraits.push(traitSet);
-    //     // console.log(objectFriend.selectedTraits)
-    //     const concatTraits = objectFriend.selectedTraits.reduce(function(acc, curr){
-    //         return acc.concat(curr);
-    //     })
-    
-    //     console.log(concatTraits);
-        
-    // }
-
-    // for(let key in objectFriend.traits) {
-    //     console.log(objectFriend.traits[key])
-    // }
-    
-    // objectFriend.valueArray = function(){
-    //     for(let i =0; i<concatTraits.length; i++) {
-    //         // console.log(concatTraits[i]);
-    //         // console.log('for in loop')
-
-    //         if (i === objectFriend.traits[key]) {
-    //             console.log(objectFriend.traits[key])
-                
-    //         }
-    //     }
-    // }
-
-    // take traits and get corresponding key pair values from the traits object
-    //stretch goal: display a short description of the chosen object's 
-
-    // .map function 
-    
-    //write a function (3) that removes the three objects from the last turn from the MAIN array
-    //Question - can this function live inside function2?
-
-    //pull three new random objects from MAIN array (Function 1 again, pending answer to next question)
-    //QUESTION: is this still the MAIN array or will it become a different one every time it loses three objects?
-
-    //functions 1, 2 & 3 repeat 5 times. 
-    //QUESTION how to trigger final display of community survival time?
-
-    // CONCURRENT function (4)
-    // write traits.reduce function to accumulate the value of SURVIVAL array
 
    
-  
+    objectFriend.init = function() {
+        // objectFriend.getTraits();
+        objectFriend.userChoice();
+    }
    
    
     $(function(){
-        // console.log('it works!')
+        objectFriend.init();
         
-        objectFriend.userChoice();
-        // objectFriend.aggregateTraits();
     });
 
 
