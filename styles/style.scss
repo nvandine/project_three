@@ -1,7 +1,7 @@
 @import "partials/setup";
 @import "partials/typography";
 @import "components/buttons";
-@import "components/mediaqueries";
+
 
 * {
     margin: 0;
@@ -25,7 +25,7 @@ a {
 
 li {
     list-style: none;
-    padding: 15px;
+    padding: 10px;
 }
 
 form h3 {
@@ -33,6 +33,11 @@ form h3 {
     padding-bottom: 10px;
     
 }
+
+form[class="radio"] {
+    align-items: baseline;
+}
+
 .container {
     background: url("../assets/apocalypse-2459465_1920.jpg") no-repeat center center fixed;
     // background-position: center;
@@ -65,21 +70,30 @@ footer{
 section {
     height: 100vh;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
+.headerText {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    img {
+        height: 90px;
+        width: 90px;
+    }
+}
 
 .headerText,
 .results {
     padding: 30px;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6));
-    text-align: center;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75));
+    // text-align: center;
     border-radius: 15px;
     
-}
-
-.stage h2 {
-    padding: 100px 15% 50px;
-    text-align: center;
 }
 
 input[type="radio"] {
@@ -89,17 +103,17 @@ input[type="radio"] {
 
 input[type="radio"] + img {
     cursor: pointer;
-    
 }
-
 
 input[type="radio"]:hover + img:hover {
     border: 5px solid white;
     cursor: pointer;
 }
 
-input[type="radio"]:checked +img{
+input[type="radio"]:checked +img,
+input[type="radio"]:active +img {
     border: 5px solid orange;
+    background-image: linear-gradient(rgba(255,255,255, 0.3), rgba(255,255,255, 0.3))
 }
 
 
@@ -127,7 +141,7 @@ input[type="radio"]:checked +img{
 
 .result {
     display: none;
-    height: 75vh;
+    height: 80vh;
     max-width: 75%;
     margin: 0 auto;
     background-color: rgb(62, 62, 65);
@@ -140,15 +154,17 @@ input[type="radio"]:checked +img{
     box-shadow: 0 0 10px 3px grey;
     color: white;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    h3 {
-        padding-bottom: 20px;
-    }
-    ul li {
-        line-height: 1.5;
+    .resultContainter{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;   
+        h3 {
+            padding-bottom: 20px;
+        }
+        ul li {
+            line-height: 1.5;
+        }
     }
 }
 
@@ -158,6 +174,47 @@ footer {
 }
 
 
-// .results {
-    
-// }
+// @import "components/mediaqueries";
+/* MEDIA QUERIES */
+
+/* Portrait tablet and small desktops */
+
+@media (max-width: 940px) {
+    h1 {
+        font-size: 3rem;
+    }
+    .headerText p {
+        font-size: 1.4rem;
+        line-height: 1.5;
+    }
+    .stage h2 {
+        padding: 10px 10% 10px;
+        font-size: 1.5rem;
+        text-align: left;
+    }
+    section {
+        height: 100%;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Landscape phone to portrait tablet */
+
+@media (max-width: 767px) {}
+
+/* Portrait phones and down */
+
+@media (max-width: 480px) {
+    .headerText {
+        width: 90%;
+    }
+    p {
+        font-size: 1.4rem;
+        padding: 5px 0 50px 0;
+    }
+    form {
+        flex-direction: column;
+    }
+}

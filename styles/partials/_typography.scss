@@ -5,21 +5,25 @@ html {
 
 a,
 input[type="submit"] {
-    font-size: 1.4rem;
+    font-size: 2rem;
+    letter-spacing: 0.5px;
+    font-weight: bold;
     text-transform: uppercase;
-    line-height: 1.5;
+    // line-height: 1.5;
 }
 
 li {
     font-size: 1.5rem;
-    line-height: 2;
+    line-height: 2.5;
+    // border: 1px solid red;
 }
 
 p {
-    font-weight: 900;
-    line-height: 1.8;
-    padding: 10px 50px;
+    font-weight: 500;
+    line-height: 1.5;
+    padding: 15px 30px;
     font-size: 1.6rem;
+    text-align: center;
 }
 
 h1 {
@@ -28,8 +32,23 @@ h1 {
 
 h2 {
     font-size: 2.4rem;
+    text-align: center;
+}
+
+.stage h2 {
+    padding: 50px 15% 50px;
+    text-align: center;
 }
 
 h3 {
+    padding-top: 15px;
     font-size: 2rem;
+}
+
+.result h3 {
+    padding: 50px;
+}
+
+form h3 {
+    max-width: 200px;
 }

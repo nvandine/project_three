@@ -42,7 +42,7 @@ objectFriend.catalog = {
             traits: ['can cook', 'runs really fast', 'is very kind'],
             // description
             title: 'a spoon'
-           
+        
         },
         cathodeRayTv: {
             traits: ['is very kind', 'is harbouring a deadly virus', 'knows karate'],
@@ -113,7 +113,7 @@ objectFriend.catalog = {
             title: 'salad. You don\'t make friends with salad'
             // YOU DON'T MAKE FRIENDS WITH SALAD
         }
-       
+    
         
     }
     
@@ -123,7 +123,7 @@ objectFriend.catalog = {
     //     const randoIndex = Math.floor(Math.random()* array.length)
     //     return array[randoIndex];
     // },
-   
+
     // FOR SAKE OF SIMPLICITY:
     // have all the options on one page - no random, offer selection
     // use radio buttons
@@ -197,7 +197,7 @@ objectFriend.catalog = {
         $('.result h2').text(`Your community will last a total of ${objectFriend.score} days.`);
         $('.finalResult').text(`${objectFriend.score}`);
         console.log(`Your community just earned ${objectFriend.score} days.`);
-       
+    
     }
 
 
@@ -208,13 +208,13 @@ objectFriend.catalog = {
         });
     });
 
-   
+
     objectFriend.init = function() {
         // objectFriend.getTraits();
         objectFriend.userChoice();
     }
-   
-   
+
+
     $(function(){
         objectFriend.init();
         
