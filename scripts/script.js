@@ -94,7 +94,7 @@ objectFriend.catalog = {
         },
         soccerTeam: {
             traits: ['knows karate','likes to waste resources','can find water'],
-            title: 'The 1994 Brazilian Fifa World Cup champions',
+            title: 'The 1994 Brazilian FIFA World Cup champions',
         },
         butter: {
             traits: ['is a total traitor', 'is a partier', 'can sew'],
@@ -110,7 +110,7 @@ objectFriend.catalog = {
         },
         salad: {
             traits: ['is a total traitor', 'is desperate', 'is a partier'],
-            title: 'salad. You don\'t make friends with salad'
+            title: 'salad (you don\'t make friends with salad)'
             // YOU DON'T MAKE FRIENDS WITH SALAD
         }
     
@@ -143,7 +143,7 @@ objectFriend.catalog = {
         radios.on('click', function(){
             // console.log(this);
             let target = this.value;
-            console.log(target);
+            // console.log(target);
             objectFriend.getTraits(target);
             
         }); 
@@ -177,7 +177,7 @@ objectFriend.catalog = {
         // console.log('hello')
         let traitSet = objectFriend.catalog[target].traits;
         // let traitDescription = objectFriend.catalog[target].description;
-        console.log(traitSet);
+        // console.log(traitSet);
         let title = objectFriend.catalog[target].title;
         $('.result h3').text(`You have chosen to befriend ${title}.`);
         // console.log(`You have chosen ${target}.`)
@@ -190,15 +190,44 @@ objectFriend.catalog = {
             $('.result ul').append(`<li>${title} ${traitSet[trait]} (${value} days) </li>`  );
 
     
-            console.log(`Your new friend is a ${traitSet[trait]} which gives you ${value} days`)
+            // console.log(`Your new friend is a ${traitSet[trait]} which gives you ${value} days`)
      
         }
 
         $('.result h2').text(`Your community will last a total of ${objectFriend.score} days.`);
         $('.finalResult').text(`${objectFriend.score}`);
-        console.log(`Your community just earned ${objectFriend.score} days.`);
+        // console.log(`Your community just earned ${objectFriend.score} days.`);
     
     }
+
+    // objectFriend.selectedTraits = [];
+    // objectFriend.aggregateTraits = function(traitSet){
+    //     // console.log("hey now");
+    //     // console.log(traitSet);
+    //     objectFriend.selectedTraits.push(traitSet);
+    //     console.log(objectFriend.selectedTraits)
+    //     const concatTraits = objectFriend.selectedTraits.reduce(function(acc, curr){
+    //         return acc.concat(curr);
+    //     })
+    
+    //     console.log(concatTraits);
+    
+    // }
+    
+    // for(let key in objectFriend.traits) {
+    //     console.log(objectFriend.traits[key])
+    // }
+
+    // objectFriend.valueArray = function(){
+    //     for(let i =0; i<concatTraits.length; i++) {
+    //         // console.log(concatTraits[i]);
+    //         // console.log('for in loop')
+    
+    //         if (i === objectFriend.traits[key]) {
+    //             console.log(objectFriend.traits[key])
+    //         }
+    //     }
+    // }
 
 
     $(function () {
